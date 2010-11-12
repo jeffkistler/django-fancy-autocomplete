@@ -1,0 +1,9 @@
+=========================
+Django Fancy Autocomplete
+=========================
+
+Django Fancy Autocomplete is a reusable app to add simple AJAX autocomplete
+views to Django_ projects. It allows users to define views in a simple
+declarative style similar to the default Django_ ``admin`` app.
+
+.. _Django: http://www.djangoproject.com/

@@ -1,0 +1,7 @@
+include README
+include LICENSE
+include INSTALL
+include AUTHORS
+include MANIFEST.in
+recursive-include docs *
+recursive-include src/fancy_autocomplete/fixtures *

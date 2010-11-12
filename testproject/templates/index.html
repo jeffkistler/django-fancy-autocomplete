@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Autocomplete</title>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/smoothness/jquery-ui.css">
+  </head>
+  <body>
+    <form action=".">
+      <label for="username">User</label><input type="text" name="username" id="id_username">
+      <label for="authenticated_username">User</label><input type="text" name="authenticated_username" id="id_authenticated_username">
+      <label for="standalone_username">User</label><input type="text" name="standalone_username" id="id_standalone_username">
+    </form>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+    <script>
+      $(function($) {
+      {% include "autocomplete.js" %}
+      });
+    </script>
+  </body>
+</html>
