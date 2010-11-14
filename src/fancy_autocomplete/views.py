@@ -24,7 +24,7 @@ class BaseAutocomplete(object):
     def __init__(self, **kwargs):
         self._load_config_values(kwargs,
             lookup='startswith',
-            mimetype='application/javascript',
+            mimetype='text/javascript',
             query_param='q',
             model=None,
             queryset=None,

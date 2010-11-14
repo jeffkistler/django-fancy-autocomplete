@@ -56,7 +56,7 @@ class BaseAutocompleteTest(TestCase):
         self.assertEquals(User, autocomplete.model)
         self.assertEquals('q', autocomplete.query_param)
         self.assertEquals('startswith', autocomplete.lookup)
-        self.assertEquals('application/javascript', autocomplete.mimetype)
+        self.assertEquals('text/javascript', autocomplete.mimetype)
         self.assertEquals(None, autocomplete.limit)
         self.assertEquals(('GET',), autocomplete.allowed_methods)
 
@@ -64,7 +64,7 @@ class BaseAutocompleteTest(TestCase):
         autocomplete = BaseAutocomplete(model=User)
         self.assertEquals('q', autocomplete.query_param)
         self.assertEquals('startswith', autocomplete.lookup)
-        self.assertEquals('application/javascript', autocomplete.mimetype)
+        self.assertEquals('text/javascript', autocomplete.mimetype)
         self.assertEquals(None, autocomplete.limit)
         self.assertEquals(('GET',), autocomplete.allowed_methods)
 
@@ -151,7 +151,7 @@ class BaseAutocompleteTest(TestCase):
     
     def test_get_mimetype(self):
         autocomplete = BaseAutocomplete()
-        self.assertEquals('application/javascript', autocomplete.get_mimetype())
+        self.assertEquals('text/javascript', autocomplete.get_mimetype())
         autocomplete = BaseAutocomplete(mimetype='application/json')
         self.assertEquals('application/json', autocomplete.get_mimetype())
         class TestAutocomplete(BaseAutocomplete):
@@ -274,7 +274,7 @@ class LabeledAutcompleteResponseTest(TransactionTestCase):
 
         qs = User.objects.filter(username__startswith='an')
         compare = simplejson.dumps(list((u.id, unicode(u)) for u in qs))
-        self.assertEquals('application/javascript', response['Content-Type'])
+        self.assertEquals('text/javascript', response['Content-Type'])
         self.assertEquals(compare, response.content)
 
         request = request_factory.get("/", {'q': 'an'})
@@ -289,7 +289,7 @@ class LabeledAutcompleteResponseTest(TransactionTestCase):
 
         qs = User.objects.filter(username__startswith='an')[:1]
         compare = simplejson.dumps(list((u.id, unicode(u)) for u in qs))
-        self.assertEquals('application/javascript', response['Content-Type'])
+        self.assertEquals('text/javascript', response['Content-Type'])
         self.assertEquals(compare, response.content)
 
     def test_as_view(self):
@@ -303,7 +303,7 @@ class LabeledAutcompleteResponseTest(TransactionTestCase):
 
         qs = User.objects.filter(username__startswith='an')
         compare = simplejson.dumps(list((u.id, unicode(u)) for u in qs))
-        self.assertEquals('application/javascript', response['Content-Type'])
+        self.assertEquals('text/javascript', response['Content-Type'])
         self.assertEquals(compare, response.content)
 
 class ObjectAutocompleteBasicTest(TestCase):
@@ -338,7 +338,7 @@ class ObjectAutocompleteResponseTest(TransactionTestCase):
 
         qs = User.objects.filter(username__startswith='c').values('username')
         compare = simplejson.dumps(list(qs))
-        self.assertEquals('application/javascript', response['Content-Type'])
+        self.assertEquals('text/javascript', response['Content-Type'])
         self.assertEquals(compare, response.content)
 
 
@@ -354,7 +354,7 @@ class ObjectAutocompleteResponseTest(TransactionTestCase):
 
         qs = User.objects.filter(username__startswith='d').values('username')
         compare = simplejson.dumps(list(qs))
-        self.assertEquals('application/javascript', response['Content-Type'])
+        self.assertEquals('text/javascript', response['Content-Type'])
         self.assertEquals(compare, response.content)
 
 
