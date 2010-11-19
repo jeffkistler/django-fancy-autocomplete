@@ -6,12 +6,13 @@ def read(fname):
 
 setup(
     name = 'django-fancy-autocomplete',
-    version = '0.1a',
+    version = '0.1a1',
     license = 'BSD',
     description = 'A simple AJAX autocomplete helper app for Django projects',
     long_description = read('README'),
     author = 'Jeff Kistler',
     author_email = 'jeff@jeffkistler.com',
+    url = 'https://github.com/jeffkistler/django-fancy-autocomplete',
     packages = ['fancy_autocomplete'],
     package_dir = {'': 'src'},
     package_data = {'fancy_autocomplete': ['fixtures/*',]},
